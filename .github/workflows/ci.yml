@@ -15,8 +15,8 @@ jobs:
 
         - name: Docker build image
           run: |
-           docker build -t check-app-backend:latest .
-           docker build -t check-app-frontend:latest .
+           docker build -t check-app-backend:latest ./backend
+           docker build -t check-app-frontend:latest ./frontend
 
         - name: Kind load docker-image
           run: |
