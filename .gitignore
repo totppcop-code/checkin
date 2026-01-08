@@ -1,3 +1,23 @@
+# GitHub Actions runner
+.runner/
+_work/
+_diag/
+bin/
+bin.*/
+externals/
+externals.*/
+actions-runner-linux-x64-*.tar.gz
+
+# Local configs
+config.sh
+env.sh
+
+# Helper scripts (可選)
+run.sh
+safe_sleep.sh
+svc.sh
+
+
 #Node.js/React
 node_modules/
 npm-debug.log
@@ -32,9 +52,6 @@ coverage/
 .cache/
 *.bak
 *.old
-
-#Git
-.git/
 
 #IDE
 .vscode/
