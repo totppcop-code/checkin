@@ -15,13 +15,13 @@ jobs:
 
         - name: Docker build image
           run: |
-           docker build -t check-app-backend:latest ./backend
-           docker build -t check-app-frontend:latest ./frontend
+           docker build -t check-app-backend:v1 ./backend
+           docker build -t check-app-frontend:v1 ./frontend
 
         - name: Kind load docker-image
           run: |
-           kind load docker-image check-app-backend:latest --name check-cluster
-           kind load docker-image check-app-frontend:latest --name check-cluster
+           kind load docker-image check-app-backend:v1 --name check-cluster
+           kind load docker-image check-app-frontend:v1 --name check-cluster
         
         - name: Kubectl apply k8s
           run: |
