@@ -37,8 +37,7 @@ jobs:
 
         - name: Django  migrate
           run: |
-           kubectl delete job django-migrate || true
-           kubectl apply -f k8s/django-migrate.yaml
-           kubectl wait --for=condition=complete job/django-migrate --timeout=320s
-          
+           kubectl delete job django-migrate --ignore-not-found
+           kubectl apply -f k8s/migration-job.yaml
+           kubectl wait --for=condition=complete job/django-migrate --timeout=120s
         
