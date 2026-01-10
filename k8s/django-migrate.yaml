@@ -15,4 +15,4 @@ spec:
                 name: backend-config
             - secretRef:
                 name: backend-secret
-      restartPolicy: Never
+      restartPolicy: OnFailure
