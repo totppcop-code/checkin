@@ -11,5 +11,16 @@ spec:
       - name: migrate
         image: check-app-backend:latest
         imagePullPolicy: IfNotPresent
-        command: ["python", "manage.py", "migrate"]      
+        command: ["python", "manage.py", "migrate"]
+        env:
+        - name: POSTGRES_DB
+          value: mydb
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: mypassword
+        - name: POSTGRES_HOST
+          value: postgres-service   # ⚠️ Service 名稱
+        - name: POSTGRES_PORT
+          value: "5432"
       restartPolicy: OnFailure
