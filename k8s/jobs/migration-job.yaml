@@ -4,7 +4,7 @@ metadata:
   name: django-migrate
 spec:
   backoffLimit: 3
-  ttlSecondsAfterFinished: 300
+  ttlSecondsAfterFinished: 310
   template:
     spec:
       containers:
