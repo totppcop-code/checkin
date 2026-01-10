@@ -12,4 +12,5 @@ spec:
         image: check-app-backend:latest
         imagePullPolicy: IfNotPresent
         command: ["python", "manage.py", "migrate"]
+        
       restartPolicy: OnFailure
