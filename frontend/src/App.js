@@ -10,7 +10,7 @@ function App() {
   // 取得打卡紀錄
   const fetchCheckins = async () => {
     try {
-      const res = await axios.get("http://api.localhost/api/checkin/");
+      const res = await axios.get("http://localhost:8000/api/checkin/");
       setCheckins(res.data);
 
       // 自動更新使用者清單
@@ -30,7 +30,7 @@ function App() {
     }
 
     try {
-      await axios.post("http://api.localhost/api/checkin/", {
+      await axios.post("http://localhost:8000/api/checkin/", {
         user: user,
         type: type,
       });
