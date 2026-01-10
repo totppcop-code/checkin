@@ -4,12 +4,12 @@ metadata:
   name: django-migrate
 spec:
   backoffLimit: 3
-  ttlSecondsAfterFinished: 310
+  ttlSecondsAfterFinished: 300
   template:
     spec:
       containers:
       - name: migrate
         image: check-app-backend:latest
         imagePullPolicy: IfNotPresent
-        command: ["python", "manage.py", "migrate"]
+        command: ["python", "manage.py", "migrate"]      
       restartPolicy: OnFailure
