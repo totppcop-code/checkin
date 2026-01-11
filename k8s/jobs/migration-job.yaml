@@ -3,8 +3,8 @@ kind: Job
 metadata:
   name: django-migrate
 spec:
-  backoffLimit: 3
-  ttlSecondsAfterFinished: 600
+  backoffLimit: 6
+  ttlSecondsAfterFinished: null
   template:
     spec:
       containers:

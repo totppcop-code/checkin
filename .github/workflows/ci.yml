@@ -37,12 +37,9 @@ jobs:
 
         - name: Django  migrate
           run: |
-           kubectl delete job django-migrate --ignore-not-found
+           kubectl delete job django-migrate --ignore-not-found --wait=false
            kubectl apply -f k8s/jobs/migration-job.yaml --wait=false
            kubectl wait --for=condition=complete job/django-migrate --timeout=120s
-
-        - name: Show migration logs 
-          run: | 
-           POD=$(kubectl get pods --selector=job-name=django-migrate -o jsonpath='{.items[0].metadata.name}' 2>/dev/null || echo "") if [ -n "$POD" ]; then echo "=== Logs from $POD ===" kubectl logs $POD --tail=100 || true else echo "No migration pod found." fi
+           
         
         
