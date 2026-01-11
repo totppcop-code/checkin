@@ -14,6 +14,5 @@ spec:
         command: ["python", "manage.py", "migrate"]
         envFrom:
         - secretRef:
-            name: backend-secret
-            
+            name: backend-secret  
       restartPolicy: OnFailure
